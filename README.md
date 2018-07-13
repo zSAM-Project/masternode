@@ -4,10 +4,10 @@ Autoinstaller for STAMP Masternode on Ubuntu 16.04 VPS. This script will install
 If you don't have a VPS yet, please choose a small Ubuntu 16.04 virtual machine at https://www.vultr.com/?ref=7476040
 
 Usage:
-
+<pre><code>
 wget https://raw.githubusercontent.com/zSAM-Project/masternode/master/vps_setup.sh && sudo chmod 755 vps_setup.sh && ./vps_setup.sh
 wget https://raw.githubusercontent.com/zSAM-Project/masternode/master/stamp_mn_install.sh && sudo chmod 755 stamp_mn_install.sh && ./stamp_mn_install.sh
-
+</pre></code>
 License
 Released under the MIT license.
 
