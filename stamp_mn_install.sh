@@ -66,21 +66,24 @@ sudo chown 500 /home/stampcoin/.stamp/stamp.conf
 
 sudo tee /etc/systemd/system/stampcoin.service <<EOF
 [Unit]
-Description=STAMPCoin, distributed currency daemon
-After=network.target
+Description=STAMP Coin, distributed currency daemon
+After=syslog.target network.target
 
 [Service]
+Type=forking
 User=stampcoin
 Group=stampcoin
 WorkingDirectory=/home/stampcoin/
 ExecStart=/usr/bin/stampd
+ExecStop=/usr/bin/stamp-cli stop
 
-Restart=always
+Restart=on-failure
+RestartSec=120
 PrivateTmp=true
-TimeoutStopSec=60s
-TimeoutStartSec=2s
-StartLimitInterval=120s
-StartLimitBurst=5
+TimeoutStopSec=120
+TimeoutStartSec=120
+StartLimitInterval=120
+StartLimitBurst=3
 
 [Install]
 WantedBy=multi-user.target
@@ -88,7 +91,7 @@ EOF
 
 sudo -H -u stampcoin /usr/bin/stampd
 echo "Booting STAMP node and creating keypool"
-sleep 15
+sleep 10
 
 MNGENKEY=`sudo -H -u stampcoin /usr/bin/stamp-cli masternode genkey`
 echo -e "masternode=1\nmasternodeaddress=${MN_EXTERNAL_IP}:33452\nmasternodeprivkey=${MNGENKEY}" | sudo tee -a /home/stampcoin/.stamp/stamp.conf
