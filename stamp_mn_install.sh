@@ -92,6 +92,7 @@ sleep 15
 
 MNGENKEY=`sudo -H -u stampcoin /usr/bin/stamp-cli masternode genkey`
 echo -e "masternode=1\nmasternodeaddress=${MN_EXTERNAL_IP}:33452\nmasternodeprivkey=${MNGENKEY}" | sudo tee -a /home/stampcoin/.stamp/stamp.conf
+sudo -H -u stampcoin /usr/bin/stamp-cli stop
 sudo systemctl enable stampcoin
 sudo systemctl start stampcoin
 
