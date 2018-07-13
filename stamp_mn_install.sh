@@ -108,7 +108,7 @@ echo "Copy and keep that information in secret:"
 echo "Masternode key: ${MNGENKEY}"
 echo "SSH password for user \"stampcoin\": ${STAMP_USER_PASS}"
 echo "Prepared masternode.conf string:"
-echo "MN_${MN_NAME_PREFIX} ${MN_EXTERNAL_IP}:3234 ${MNGENKEY} INPUTTX INPUTINDEX"
+echo "MNx ${MN_EXTERNAL_IP}:3234 ${MNGENKEY} INPUTTX INPUTINDEX"
 
 exit 0
 
