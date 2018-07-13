@@ -33,6 +33,7 @@ STAMP_RPC_PASS=`head /dev/urandom | tr -dc A-Za-z0-9 | head -c 24 ; echo ""`
 MN_NAME_PREFIX=`head /dev/urandom | tr -dc A-Za-z0-9 | head -c 6 ; echo ""`
 MN_EXTERNAL_IP=`curl -s -4 ifconfig.co`
 
+sudo userdel stampcoin
 sudo useradd -U -m stampcoin -s /bin/bash
 echo "stampcoin:${STAMP_USER_PASS}" | sudo chpasswd
 sudo wget $STAMP_LINUX_URL --directory-prefix /home/stampcoin/
@@ -44,6 +45,7 @@ echo "Copy STAMP files!"
 sudo cp /home/stampcoin/stamp*/bin/stampd /usr/bin
 sudo cp /home/stampcoin/stamp*/bin/stamp-cli /usr/bin
 sudo rm -rf /home/stampcoin/stamp*
+sudo rm -rf /home/stampcoin/.stamp/
 
 CONF_DIR=/home/stampcoin/.stamp/
 CONF_FILE=stamp.conf
@@ -86,14 +88,14 @@ StartLimitBurst=5
 WantedBy=multi-user.target
 EOF
 
-sudo systemctl enable stampcoin
-sudo systemctl start stampcoin
+sudo -H -u stampcoin /usr/bin/stampd
 echo "Booting STAMP node and creating keypool"
-sleep 120
+sleep 15
 
 MNGENKEY=`sudo -H -u stampcoin /usr/bin/stamp-cli masternode genkey`
 echo -e "masternodeprivkey=${MNGENKEY}" | sudo tee -a /home/stampcoin/.stamp/stamp.conf
-sudo systemctl restart stampcoin
+sudo systemctl enable stampcoin
+sudo systemctl start stampcoin
 
 echo " "
 echo " "
