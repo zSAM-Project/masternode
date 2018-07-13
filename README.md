@@ -1,7 +1,7 @@
 # STAMP Masternode Installer
 Autoinstaller for STAMP Masternode on Ubuntu 16.04 VPS. This script will install your STAMP node on a clean Ubuntu 16.04 VPS. If you already have any other wallets running, please check firewall ports. You can only install one STAMP masternode per VPS.
 
-If you don't have a VPS yet, please choose a small Ubuntu 16.04 virtual machine at https://www.vultr.com/?ref=7476040
+If you don't have a VPS yet, please choose a small Ubuntu 16.04 virtual machine at <a href="https://www.vultr.com/?ref=7476040" rel="nofollow">https://www.vultr.com/</a></p>
 
 Usage:
 <pre><code>
