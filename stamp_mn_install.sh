@@ -60,8 +60,6 @@ echo "server=1" >> $CONF_DIR/$CONF_FILE
 echo "daemon=1" >> $CONF_DIR/$CONF_FILE
 echo "maxconnections=256" >> $CONF_DIR/$CONF_FILE
 echo "port=33452" >> $CONF_DIR/$CONF_FILE
-echo "masternode=1" >> $CONF_DIR/$CONF_FILE
-echo "masternodeaddress=$MN_EXTERNAL_IP:33452" >> $CONF_DIR/$CONF_FILE
 
 sudo chown -R stampcoin:stampcoin /home/stampcoin/.stamp/
 sudo chown 500 /home/stampcoin/.stamp/stamp.conf
@@ -93,7 +91,7 @@ echo "Booting STAMP node and creating keypool"
 sleep 15
 
 MNGENKEY=`sudo -H -u stampcoin /usr/bin/stamp-cli masternode genkey`
-echo -e "masternodeprivkey=${MNGENKEY}" | sudo tee -a /home/stampcoin/.stamp/stamp.conf
+echo -e "masternode=1\nmasternodeaddress=${MN_EXTERNAL_IP}:33452\nmasternodeprivkey=${MNGENKEY}" | sudo tee -a /home/stampcoin/.stamp/stamp.conf
 sudo systemctl enable stampcoin
 sudo systemctl start stampcoin
 
