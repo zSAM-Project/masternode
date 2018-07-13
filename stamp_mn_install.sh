@@ -30,7 +30,6 @@ export LANG=en_US.UTF-8
 STAMP_LINUX_URL=https://github.com/zSAM-Project/stamp/releases/download/1.1.0.2/stamp-1.1.0-x86_64-linux-gnu.tar.gz
 STAMP_USER_PASS=`head /dev/urandom | tr -dc A-Za-z0-9 | head -c 32 ; echo ""`
 STAMP_RPC_PASS=`head /dev/urandom | tr -dc A-Za-z0-9 | head -c 24 ; echo ""`
-MN_NAME_PREFIX=`head /dev/urandom | tr -dc A-Za-z0-9 | head -c 6 ; echo ""`
 MN_EXTERNAL_IP=`curl -s -4 ifconfig.co`
 
 sudo userdel stampcoin
@@ -51,8 +50,8 @@ CONF_DIR=/home/stampcoin/.stamp/
 CONF_FILE=stamp.conf
 
 mkdir -p $CONF_DIR
-echo "rpcuser=user"`shuf -i 100000-10000000 -n 1` >> $CONF_DIR/$CONF_FILE
-echo "rpcpassword=pass"`shuf -i 100000-10000000 -n 1` >> $CONF_DIR/$CONF_FILE
+echo "rpcuser=stampcoinrpc" >> $CONF_DIR/$CONF_FILE
+echo "rpcpassword=${STAMP_RPC_PASS}" >> $CONF_DIR/$CONF_FILE
 echo "rpcallowip=127.0.0.1" >> $CONF_DIR/$CONF_FILE
 echo "rpcport=33453" >> $CONF_DIR/$CONF_FILE
 echo "listen=1" >> $CONF_DIR/$CONF_FILE
@@ -102,13 +101,13 @@ sudo systemctl start stampcoin
 echo " "
 echo " "
 echo "==============================="
-echo "Masternode installed!"
+echo "STAMP Coin Masternode installed!"
 echo "==============================="
 echo "Copy and keep that information in secret:"
 echo "Masternode key: ${MNGENKEY}"
 echo "SSH password for user \"stampcoin\": ${STAMP_USER_PASS}"
 echo "Prepared masternode.conf string:"
-echo "MNx ${MN_EXTERNAL_IP}:3234 ${MNGENKEY} INPUTTX INPUTINDEX"
+echo "MNx ${MN_EXTERNAL_IP}:33452 ${MNGENKEY} INPUTTX INPUTINDEX"
 
 exit 0
 
