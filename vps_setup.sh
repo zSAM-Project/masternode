@@ -60,7 +60,7 @@ sudo ufw limit ssh/tcp
 sudo ufw allow 33452/tcp
 sudo ufw allow 33453/tcp
 sudo ufw logging on
-sudo ufw enable
+sudo ufw --force enable
 sudo ufw status
 
 echo "Your VPS for Masternode is now ready!"
