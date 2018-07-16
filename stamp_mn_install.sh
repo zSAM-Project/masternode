@@ -41,8 +41,8 @@ sudo rm /home/stampcoin/stamp-*-x86_64-linux-gnu.tar.gz
 sudo chown -R stampcoin:stampcoin /home/stampcoin/stamp*
 sudo chmod 755 /home/stampcoin/stamp*
 echo "Copy STAMP files!"
-sudo cp /home/stampcoin/stamp*/bin/stampd /usr/bin
-sudo cp /home/stampcoin/stamp*/bin/stamp-cli /usr/bin
+sudo cp /home/stampcoin/stamp*/bin/stampd /usr/local/bin
+sudo cp /home/stampcoin/stamp*/bin/stamp-cli /usr/local/bin
 sudo rm -rf /home/stampcoin/stamp*
 sudo rm -rf /home/stampcoin/.stamp/
 
@@ -73,8 +73,8 @@ Type=forking
 User=stampcoin
 Group=stampcoin
 WorkingDirectory=/home/stampcoin/
-ExecStart=/usr/bin/stampd
-ExecStop=/usr/bin/stamp-cli stop
+ExecStart=/usr/local/bin/stampd
+ExecStop=/usr/local/bin/stamp-cli stop
 
 Restart=on-failure
 RestartSec=120
@@ -88,13 +88,13 @@ StartLimitBurst=3
 WantedBy=multi-user.target
 EOF
 
-sudo -H -u stampcoin /usr/bin/stampd
+sudo -H -u stampcoin /usr/local/bin/stampd
 echo "Booting STAMP node and creating keypool"
 sleep 10
 
-MNGENKEY=`sudo -H -u stampcoin /usr/bin/stamp-cli masternode genkey`
+MNGENKEY=`sudo -H -u stampcoin /usr/local/bin/stamp-cli masternode genkey`
 echo -e "masternode=1\nmasternodeaddress=${MN_EXTERNAL_IP}:33452\nmasternodeprivkey=${MNGENKEY}" | sudo tee -a /home/stampcoin/.stamp/stamp.conf
-sudo -H -u stampcoin /usr/bin/stamp-cli stop
+sudo -H -u stampcoin /usr/local/bin/stamp-cli stop
 sudo systemctl enable stampcoin
 sudo systemctl start stampcoin
 
