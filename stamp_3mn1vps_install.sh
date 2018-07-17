@@ -236,10 +236,14 @@ echo "==============================="
 echo "STAMP Coin Masternode installed!"
 echo "==============================="
 echo "Copy and keep that information in secret:"
-echo "Masternode key: ${MNGENKEY}"
-echo "SSH password for user \"stampcoin\": ${STAMP_USER_PASS}"
+echo "Masternode #1 key: ${MNGENKEY1}"
+echo "Masternode #2 key: ${MNGENKEY2}"
+echo "Masternode #3 key: ${MNGENKEY3}"
+echo "SSH password for user \"stampmn1@${IP1},stampmn2@${IP2},stampmn3@${IP3}\": ${STAMP_USER_PASS}"
 echo "Prepared masternode.conf string:"
-echo "MNx ${MN_EXTERNAL_IP}:33452 ${MNGENKEY} INPUTTX INPUTINDEX"
+echo "MN1 ${IP1}:33452 ${MNGENKEY1} INPUTTX INPUTINDEX"
+echo "MN2 ${IP2}:33452 ${MNGENKEY2} INPUTTX INPUTINDEX"
+echo "MN3 ${IP3}:33452 ${MNGENKEY3} INPUTTX INPUTINDEX"
 
 exit 0
 
