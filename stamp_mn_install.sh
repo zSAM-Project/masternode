@@ -27,7 +27,7 @@ export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-STAMP_LINUX_URL=https://github.com/zSAM-Project/stamp/releases/download/1.1.0.2/stamp-1.1.0-x86_64-linux-gnu.tar.gz
+STAMP_LINUX_URL=https://github.com/zSAM-Project/stamp/releases/download/v1.1.0.2/stamp-1.1.0-x86_64-linux-gnu.tar.gz
 STAMP_USER_PASS=`head /dev/urandom | tr -dc A-Za-z0-9 | head -c 32 ; echo ""`
 STAMP_RPC_PASS=`head /dev/urandom | tr -dc A-Za-z0-9 | head -c 24 ; echo ""`
 MN_EXTERNAL_IP=`curl -s -4 ifconfig.co`
