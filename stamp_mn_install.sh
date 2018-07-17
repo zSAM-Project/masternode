@@ -18,7 +18,7 @@ echo "*                                                                         
 echo "****************************************************************************"
 echo && echo
 
-set -o errexit
+#set -o errexit
 
 cd ~
 sudo locale-gen en_US.UTF-8
