@@ -59,6 +59,8 @@ sudo ufw allow ssh/tcp
 sudo ufw limit ssh/tcp
 sudo ufw allow 33452/tcp
 sudo ufw allow 33453/tcp
+sudo ufw allow 33463/tcp
+sudo ufw allow 33473/tcp
 sudo ufw logging on
 sudo ufw --force enable
 sudo ufw status
