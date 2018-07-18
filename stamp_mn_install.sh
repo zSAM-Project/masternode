@@ -59,6 +59,7 @@ echo "server=1" >> $CONF_DIR/$CONF_FILE
 echo "daemon=1" >> $CONF_DIR/$CONF_FILE
 echo "maxconnections=256" >> $CONF_DIR/$CONF_FILE
 echo "port=33452" >> $CONF_DIR/$CONF_FILE
+echo "bind=${MN_EXTERNAL_IP}:33452" >> $CONF_DIR/$CONF_FILE
 
 sudo chown -R stampcoin:stampcoin /home/stampcoin/.stamp/
 sudo chown 500 /home/stampcoin/.stamp/stamp.conf
