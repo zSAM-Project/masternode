@@ -207,7 +207,7 @@ sudo -H -u stampmn1 /home/stampmn1/stampd
 echo "Booting STAMP MN1 and creating keypool"
 sleep 10
 MNGENKEY1=`sudo -H -u stampmn1 /home/stampmn1/stamp-cli masternode genkey`
-echo -e "masternode=1\nmasternodeaddress=${IP1}:43452\nmasternodeprivkey=${MNGENKEY1}" | sudo tee -a /home/stampmn1/.stamp/stamp.conf
+echo -e "#masternode=1\n#masternodeaddress=${IP1}:43452\n#masternodeprivkey=${MNGENKEY1}" | sudo tee -a /home/stampmn1/.stamp/stamp.conf
 sudo -H -u stampmn1 /home/stampmn1/stamp-cli stop
 sudo systemctl enable stampmn1
 sudo systemctl start stampmn1
@@ -216,7 +216,7 @@ sudo -H -u stampmn2 /home/stampmn2/stampd
 echo "Booting STAMP MN2 and creating keypool"
 sleep 10
 MNGENKEY2=`sudo -H -u stampmn2 /home/stampmn2/stamp-cli masternode genkey`
-echo -e "masternode=1\nmasternodeaddress=${IP2}:43452\nmasternodeprivkey=${MNGENKEY2}" | sudo tee -a /home/stampmn2/.stamp/stamp.conf
+echo -e "#masternode=1\n#masternodeaddress=${IP2}:43452\n#masternodeprivkey=${MNGENKEY2}" | sudo tee -a /home/stampmn2/.stamp/stamp.conf
 sudo -H -u stampmn2 /home/stampmn2/stamp-cli stop
 sudo systemctl enable stampmn2
 sudo systemctl start stampmn2
@@ -225,7 +225,7 @@ sudo -H -u stampmn3 /home/stampmn3/stampd
 echo "Booting STAMP MN3 and creating keypool"
 sleep 10
 MNGENKEY3=`sudo -H -u stampmn3 /home/stampmn3/stamp-cli masternode genkey`
-echo -e "masternode=1\nmasternodeaddress=${IP3}:43452\nmasternodeprivkey=${MNGENKEY3}" | sudo tee -a /home/stampmn3/.stamp/stamp.conf
+echo -e "#masternode=1\n#masternodeaddress=${IP3}:43452\n#masternodeprivkey=${MNGENKEY3}" | sudo tee -a /home/stampmn3/.stamp/stamp.conf
 sudo -H -u stampmn3 /home/stampmn3/stamp-cli stop
 sudo systemctl enable stampmn3
 sudo systemctl start stampmn3
