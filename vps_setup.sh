@@ -57,10 +57,10 @@ cd
 sudo apt-get install -y ufw
 sudo ufw allow ssh/tcp
 sudo ufw limit ssh/tcp
-sudo ufw allow 33452/tcp
-sudo ufw allow 33453/tcp
-sudo ufw allow 33463/tcp
-sudo ufw allow 33473/tcp
+sudo ufw allow 43452/tcp
+sudo ufw allow 43453/tcp
+sudo ufw allow 43463/tcp
+sudo ufw allow 43473/tcp
 sudo ufw logging on
 sudo ufw --force enable
 sudo ufw status
