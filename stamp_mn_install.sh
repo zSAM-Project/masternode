@@ -53,13 +53,13 @@ mkdir -p $CONF_DIR
 echo "rpcuser=stampcoinrpc" >> $CONF_DIR/$CONF_FILE
 echo "rpcpassword=${STAMP_RPC_PASS}" >> $CONF_DIR/$CONF_FILE
 echo "rpcallowip=127.0.0.1" >> $CONF_DIR/$CONF_FILE
-echo "rpcport=33453" >> $CONF_DIR/$CONF_FILE
+echo "rpcport=43453" >> $CONF_DIR/$CONF_FILE
 echo "listen=1" >> $CONF_DIR/$CONF_FILE
 echo "server=1" >> $CONF_DIR/$CONF_FILE
 echo "daemon=1" >> $CONF_DIR/$CONF_FILE
 echo "maxconnections=256" >> $CONF_DIR/$CONF_FILE
-echo "port=33452" >> $CONF_DIR/$CONF_FILE
-echo "bind=${MN_EXTERNAL_IP}:33452" >> $CONF_DIR/$CONF_FILE
+echo "port=43452" >> $CONF_DIR/$CONF_FILE
+echo "bind=${MN_EXTERNAL_IP}:43452" >> $CONF_DIR/$CONF_FILE
 
 sudo chown -R stampcoin:stampcoin /home/stampcoin/.stamp/
 sudo chown 500 /home/stampcoin/.stamp/stamp.conf
@@ -94,7 +94,7 @@ echo "Booting STAMP node and creating keypool"
 sleep 10
 
 MNGENKEY=`sudo -H -u stampcoin /usr/local/bin/stamp-cli masternode genkey`
-echo -e "masternode=1\nmasternodeaddress=${MN_EXTERNAL_IP}:33452\nmasternodeprivkey=${MNGENKEY}" | sudo tee -a /home/stampcoin/.stamp/stamp.conf
+echo -e "masternode=1\nmasternodeaddress=${MN_EXTERNAL_IP}:43452\nmasternodeprivkey=${MNGENKEY}" | sudo tee -a /home/stampcoin/.stamp/stamp.conf
 sudo -H -u stampcoin /usr/local/bin/stamp-cli stop
 sudo systemctl enable stampcoin
 sudo systemctl start stampcoin
@@ -108,7 +108,7 @@ echo "Copy and keep that information in secret:"
 echo "Masternode key: ${MNGENKEY}"
 echo "SSH password for user \"stampcoin\": ${STAMP_USER_PASS}"
 echo "Prepared masternode.conf string:"
-echo "MNx ${MN_EXTERNAL_IP}:33452 ${MNGENKEY} INPUTTX INPUTINDEX"
+echo "MNx ${MN_EXTERNAL_IP}:43452 ${MNGENKEY} INPUTTX INPUTINDEX"
 
 exit 0
 
