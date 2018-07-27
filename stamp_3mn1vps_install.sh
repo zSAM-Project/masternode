@@ -58,7 +58,7 @@ sudo userdel stampmn3
 sudo useradd -U -m stampmn3 -s /bin/bash
 echo "stampmn3:${STAMP_USER_PASS}" | sudo chpasswd
 
-#sudo wget $STAMP_LINUX_URL --directory-prefix /root/
+sudo wget $STAMP_LINUX_URL --directory-prefix /root/
 sudo tar -xzvf /root/stamp-*-x86_64-linux-gnu.tar.gz -C /root/
 sudo rm /root/stamp-*-x86_64-linux-gnu.tar.gz
 
