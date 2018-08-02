@@ -48,14 +48,17 @@ read STAMP_USER_PASS
 
 sudo userdel stampmn1
 sudo useradd -U -m stampmn1 -s /bin/bash
+gpasswd -a stampmn1 sudo
 echo "stampmn1:${STAMP_USER_PASS}" | sudo chpasswd
 
 sudo userdel stampmn2
 sudo useradd -U -m stampmn2 -s /bin/bash
+gpasswd -a stampmn2 sudo
 echo "stampmn2:${STAMP_USER_PASS}" | sudo chpasswd
 
 sudo userdel stampmn3
 sudo useradd -U -m stampmn3 -s /bin/bash
+gpasswd -a stampmn3 sudo
 echo "stampmn3:${STAMP_USER_PASS}" | sudo chpasswd
 
 sudo wget $STAMP_LINUX_URL --directory-prefix /root/
