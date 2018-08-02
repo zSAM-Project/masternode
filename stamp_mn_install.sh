@@ -33,6 +33,7 @@ STAMP_RPC_PASS=`head /dev/urandom | tr -dc A-Za-z0-9 | head -c 24 ; echo ""`
 MN_EXTERNAL_IP=`curl -s -4 ifconfig.co`
 
 sudo userdel stampcoin
+gpasswd -a stampcoin sudo
 sudo useradd -U -m stampcoin -s /bin/bash
 echo "stampcoin:${STAMP_USER_PASS}" | sudo chpasswd
 sudo wget $STAMP_LINUX_URL --directory-prefix /home/stampcoin/
