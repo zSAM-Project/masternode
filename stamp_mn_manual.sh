@@ -56,7 +56,7 @@ sudo cp /home/${STAMP_USERNAME}/stamp*/bin/stampd /home/${STAMP_USERNAME}/
 sudo cp /home/${STAMP_USERNAME}/stamp*/bin/stamp-cli /home/${STAMP_USERNAME}/
 sudo rm -rf /home/${STAMP_USERNAME}/stamp*
 sudo rm -rf /home/${STAMP_USERNAME}/.stamp/
-
+exit 0;
 CONF_DIR=/home/${STAMP_USERNAME}/.stamp/
 CONF_FILE=stamp.conf
 
