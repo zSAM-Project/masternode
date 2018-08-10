@@ -33,10 +33,13 @@ STAMP_RPC_PASS=`head /dev/urandom | tr -dc A-Za-z0-9 | head -c 24 ; echo ""`
 echo "Type the IP Address of this server, followed by [ENTER]:"
 read MN_EXTERNAL_IP
 echo ""
-echo "Enter Masternode User Name (stampmnx)"
+echo "Enter RPC Port 43453 for MN1, 43463 for MN2 or 43473 for MN3, followed by [ENTER]:"
+read STAMP_RPC_PORT
+echo ""
+echo "Enter Masternode User Name (stampmn1, stampmn2 or stampmn3), followed by [ENTER]:"
 read STAMP_USERNAME
 echo ""
-echo "Enter Masternode Password"
+echo "Enter Masternode Password, followed by [ENTER]:"
 read STAMP_USER_PASS
 
 sudo userdel ${STAMP_USERNAME}
@@ -61,7 +64,7 @@ mkdir -p $CONF_DIR
 echo "rpcuser=stampcoinrpc" >> $CONF_DIR/$CONF_FILE
 echo "rpcpassword=${STAMP_RPC_PASS}" >> $CONF_DIR/$CONF_FILE
 echo "rpcallowip=127.0.0.1" >> $CONF_DIR/$CONF_FILE
-echo "rpcport=43453" >> $CONF_DIR/$CONF_FILE
+echo "rpcport=${STAMP_RPC_PORT}" >> $CONF_DIR/$CONF_FILE
 echo "listen=1" >> $CONF_DIR/$CONF_FILE
 echo "server=1" >> $CONF_DIR/$CONF_FILE
 echo "daemon=1" >> $CONF_DIR/$CONF_FILE
