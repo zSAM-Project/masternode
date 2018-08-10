@@ -42,11 +42,11 @@ read STAMP_USER_PASS
 sudo userdel ${STAMP_USERNAME}
 sudo useradd -U -m ${STAMP_USERNAME} -s /bin/bash
 gpasswd -a ${STAMP_USERNAME} sudo
-echo "stampcoin:${STAMP_USER_PASS}" | sudo chpasswd
+echo "${STAMP_USERNAME}:${STAMP_USER_PASS}" | sudo chpasswd
 sudo wget $STAMP_LINUX_URL --directory-prefix /home/${STAMP_USERNAME}/
 sudo tar -xzvf /home/${STAMP_USERNAME}/stamp-*-x86_64-linux-gnu.tar.gz -C /home/${STAMP_USERNAME}/
 sudo rm /home/${STAMP_USERNAME}/stamp-*-x86_64-linux-gnu.tar.gz
-sudo chown -R ${STAMP_USERNAME}:${STAMP_USERNAME} /home/stampcoin/stamp*
+sudo chown -R ${STAMP_USERNAME}:${STAMP_USERNAME} /home/${STAMP_USERNAME}/stamp*
 sudo chmod 755 /home/${STAMP_USERNAME}/stamp*
 echo "Copy STAMP files!"
 sudo cp /home/${STAMP_USERNAME}/stamp*/bin/stampd /home/${STAMP_USERNAME}/
