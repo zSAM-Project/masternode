@@ -42,10 +42,12 @@ echo ""
 echo "Enter Masternode Password, followed by [ENTER]:"
 read STAMP_USER_PASS
 
+export STAMP_USERNAME=$STAMP_USERNAME
 sudo userdel ${STAMP_USERNAME}
 sudo useradd -U -m ${STAMP_USERNAME} -s /bin/bash
 gpasswd -a ${STAMP_USERNAME} sudo
 echo "${STAMP_USERNAME}:${STAMP_USER_PASS}" | sudo chpasswd
+sudo rm /home/${STAMP_USERNAME}/stamp-*-x86_64-linux-gnu.tar.gz
 sudo wget $STAMP_LINUX_URL --directory-prefix /home/${STAMP_USERNAME}/
 sudo tar -xzvf /home/${STAMP_USERNAME}/stamp-*-x86_64-linux-gnu.tar.gz -C /home/${STAMP_USERNAME}/
 sudo rm /home/${STAMP_USERNAME}/stamp-*-x86_64-linux-gnu.tar.gz
@@ -54,9 +56,10 @@ sudo chmod 755 /home/${STAMP_USERNAME}/stamp*
 echo "Copy STAMP files!"
 sudo cp /home/${STAMP_USERNAME}/stamp*/bin/stampd /home/${STAMP_USERNAME}/
 sudo cp /home/${STAMP_USERNAME}/stamp*/bin/stamp-cli /home/${STAMP_USERNAME}/
+
 sudo rm -rf /home/${STAMP_USERNAME}/stamp*
 sudo rm -rf /home/${STAMP_USERNAME}/.stamp/
-exit 0;
+
 CONF_DIR=/home/${STAMP_USERNAME}/.stamp/
 CONF_FILE=stamp.conf
 
