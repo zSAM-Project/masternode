@@ -18,10 +18,16 @@ wget https://raw.githubusercontent.com/zSAM-Project/masternode/master/stamp_mn_i
 wget https://raw.githubusercontent.com/zSAM-Project/masternode/master/stamp_3mn1vps_install.sh && sudo chmod 755 stamp_3mn1vps_install.sh && ./stamp_3mn1vps_install.sh
 </pre></code>
 
-1 MN Update Latest Version:
+1 MN to Update Latest Version:
 <pre><code>
 wget https://raw.githubusercontent.com/zSAM-Project/masternode/master/mn_stampcoin_update.sh && sudo chmod 755 mn_stampcoin_update.sh && ./mn_stampcoin_update.sh
 </pre></code>
+
+3 MN in 1 VPS to Update Latest Version:
+<pre><code>
+wget https://raw.githubusercontent.com/zSAM-Project/masternode/master/mn_3mn1vps_update.sh && sudo chmod 755 mn_3mn1vps_update.sh && ./mn_3mn1vps_update.sh
+</pre></code>
+
 License
 Released under the MIT license.
 
