@@ -34,7 +34,7 @@ sudo rm -rf /root/stamp
 sudo systemctl start stampmn1
 sudo systemctl start stampmn2
 sudo systemctl start stampmn3
-sleep 10
+sleep 30
 INFO1=`sudo -H -u stampmn1 /home/stampmn1/stamp-cli getinfo`
 INFO2=`sudo -H -u stampmn2 /home/stampmn2/stamp-cli getinfo`
 INFO3=`sudo -H -u stampmn3 /home/stampmn3/stamp-cli getinfo`
