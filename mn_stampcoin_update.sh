@@ -21,7 +21,7 @@ cd ~
 sudo wget https://github.com/zSAM-Project/stamp/releases/download/masternode/stamp.tar.gz
 sudo tar -xzvf stamp.tar.gz
 sudo systemctl stop stampcoin
-sleep 5
+sleep 10
 sudo cp ~/stamp/stamp* /usr/local/bin/
 sudo rm ~/stamp.tar.gz 
 sudo rm -rf /root/stamp
