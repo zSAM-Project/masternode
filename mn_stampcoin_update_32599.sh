@@ -42,7 +42,7 @@ sudo chown -R stampcoin:stampcoin /home/stampcoin/.stamp/blocks
 sudo chown -R stampcoin:stampcoin /home/stampcoin/.stamp/chainstate
 
 sudo systemctl start stampcoin
-sleep 15
+sleep 30
 INFO=`sudo -H -u stampcoin /usr/local/bin/stamp-cli getinfo`
 
 echo " "
