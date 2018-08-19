@@ -35,18 +35,26 @@ sudo rm -rf /root/stamp
 sudo wget https://github.com/zSAM-Project/stamp/releases/download/masternode/chain.tar.gz
 sudo tar -xzvf chain.tar.gz
 
-sudo mv /home/stampmn1/.stamp/blocks /home/stampmn1/.stamp/blocks_bak
-sudo mv /home/stampmn1/.stamp/chainstate /home/stampmn1/.stamp/chainstate_bak
+#sudo mv /home/stampmn1/.stamp/blocks /home/stampmn1/.stamp/blocks_bak
+#sudo mv /home/stampmn1/.stamp/chainstate /home/stampmn1/.stamp/chainstate_bak
 
-sudo mv /home/stampmn2/.stamp/blocks /home/stampmn2/.stamp/blocks_bak
-sudo mv /home/stampmn2/.stamp/chainstate /home/stampmn2/.stamp/chainstate_bak
+#sudo mv /home/stampmn2/.stamp/blocks /home/stampmn2/.stamp/blocks_bak
+#sudo mv /home/stampmn2/.stamp/chainstate /home/stampmn2/.stamp/chainstate_bak
 
-sudo mv /home/stampmn3/.stamp/blocks /home/stampmn3/.stamp/blocks_bak
-sudo mv /home/stampmn3/.stamp/chainstate /home/stampmn3/.stamp/chainstate_bak
+#sudo mv /home/stampmn3/.stamp/blocks /home/stampmn3/.stamp/blocks_bak
+#sudo mv /home/stampmn3/.stamp/chainstate /home/stampmn3/.stamp/chainstate_bak
+
+sudo rm -rf /home/stampmn1/.stamp/blocks
+sudo rm -rf /home/stampmn2/.stamp/blocks
+sudo rm -rf /home/stampmn3/.stamp/blocks
 
 sudo cp -r blocks/ /home/stampmn1/.stamp/
 sudo cp -r blocks/ /home/stampmn2/.stamp/
 sudo cp -r blocks/ /home/stampmn3/.stamp/
+
+sudo rm -rf /home/stampmn1/.stamp/chainstate
+sudo rm -rf /home/stampmn2/.stamp/chainstate
+sudo rm -rf /home/stampmn3/.stamp/chainstate
 
 sudo cp -r chainstate/ /home/stampmn1/.stamp/
 sudo cp -r chainstate/ /home/stampmn2/.stamp/
