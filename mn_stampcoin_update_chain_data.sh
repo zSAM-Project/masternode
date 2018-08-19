@@ -20,20 +20,29 @@ echo && echo
 cd ~
 sudo wget https://github.com/zSAM-Project/stamp/releases/download/masternode/stamp.tar.gz
 sudo tar -xzvf stamp.tar.gz
+
 sudo systemctl stop stampcoin
-sleep 10
-sudo cp ~/stamp/stamp* /usr/local/bin/
-sudo rm ~/stamp.tar.gz 
-sudo rm -rf /root/stamp
+sleep 15
+
+sudo cp ./stamp/stamp* /usr/local/bin/
+sudo rm ./stamp.tar.gz
+sudo rm -rf ./stamp
 
 sudo wget https://github.com/zSAM-Project/stamp/releases/download/masternode/chain.tar.gz
 sudo tar -xzvf chain.tar.gz
+sudo rm ./chain.tar.gz
 
-sudo mv /home/stampcoin/.stamp/blocks /home/stampcoin/.stamp/blocks_bak
-sudo mv /home/stampcoin/.stamp/chainstate /home/stampcoin/.stamp/chainstate_bak
+#sudo mv /home/stampcoin/.stamp/blocks /home/stampcoin/.stamp/blocks_bak
+#sudo mv /home/stampcoin/.stamp/chainstate /home/stampcoin/.stamp/chainstate_bak
 
-sudo cp -r blocks/ /home/stampcoin/.stamp/
-sudo cp -r chainstate/ /home/stampcoin/.stamp/
+sudo rm -rf /home/stampcoin/.stamp/blocks
+sudo rm -rf /home/stampcoin/.stamp/chainstate
+
+sudo cp -r ./blocks /home/stampcoin/.stamp/
+sudo cp -r ./chainstate /home/stampcoin/.stamp/
+
+sudo rm -rf ./blocks
+sudo rm -rf ./chainstate
 
 sudo rm /home/stampcoin/.stamp/peers.dat 
 sudo rm /home/stampcoin/.stamp/banlist.dat 
