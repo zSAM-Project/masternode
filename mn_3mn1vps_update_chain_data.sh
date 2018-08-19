@@ -25,15 +25,16 @@ sudo systemctl stop stampmn2
 sudo systemctl stop stampmn3
 sleep 10
 
-sudo cp ~/stamp/stamp* /home/stampmn1/
-sudo cp ~/stamp/stamp* /home/stampmn2/
-sudo cp ~/stamp/stamp* /home/stampmn3/
-sudo rm ~/stamp.tar.gz 
-sudo rm -rf /root/stamp
+sudo cp ./stamp/stamp* /home/stampmn1/
+sudo cp ./stamp/stamp* /home/stampmn2/
+sudo cp ./stamp/stamp* /home/stampmn3/
+sudo rm ./stamp.tar.gz 
+sudo rm -rf ./stamp
 
 
 sudo wget https://github.com/zSAM-Project/stamp/releases/download/masternode/chain.tar.gz
 sudo tar -xzvf chain.tar.gz
+sudo rm ./chain.tar.gz
 
 #sudo mv /home/stampmn1/.stamp/blocks /home/stampmn1/.stamp/blocks_bak
 #sudo mv /home/stampmn1/.stamp/chainstate /home/stampmn1/.stamp/chainstate_bak
@@ -48,17 +49,20 @@ sudo rm -rf /home/stampmn1/.stamp/blocks
 sudo rm -rf /home/stampmn2/.stamp/blocks
 sudo rm -rf /home/stampmn3/.stamp/blocks
 
-sudo cp -r blocks/ /home/stampmn1/.stamp/
-sudo cp -r blocks/ /home/stampmn2/.stamp/
-sudo cp -r blocks/ /home/stampmn3/.stamp/
+sudo cp -r ./blocks /home/stampmn1/.stamp/
+sudo cp -r ./blocks /home/stampmn2/.stamp/
+sudo cp -r ./blocks /home/stampmn3/.stamp/
 
 sudo rm -rf /home/stampmn1/.stamp/chainstate
 sudo rm -rf /home/stampmn2/.stamp/chainstate
 sudo rm -rf /home/stampmn3/.stamp/chainstate
 
-sudo cp -r chainstate/ /home/stampmn1/.stamp/
-sudo cp -r chainstate/ /home/stampmn2/.stamp/
-sudo cp -r chainstate/ /home/stampmn3/.stamp/
+sudo cp -r ./chainstate /home/stampmn1/.stamp/
+sudo cp -r ./chainstate /home/stampmn2/.stamp/
+sudo cp -r ./chainstate /home/stampmn3/.stamp/
+
+sudo rm -rf ./blocks
+sudo rm -rf ./chainstate
 
 sudo rm /home/stampmn1/.stamp/peers.dat 
 sudo rm /home/stampmn2/.stamp/peers.dat 
