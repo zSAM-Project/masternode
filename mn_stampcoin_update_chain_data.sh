@@ -26,8 +26,8 @@ sudo cp ~/stamp/stamp* /usr/local/bin/
 sudo rm ~/stamp.tar.gz 
 sudo rm -rf /root/stamp
 
-sudo wget https://github.com/zSAM-Project/stamp/releases/download/masternode/33088.tar.gz
-sudo tar -xzvf 33088.tar.gz
+sudo wget https://github.com/zSAM-Project/stamp/releases/download/masternode/chain.tar.gz
+sudo tar -xzvf chain.tar.gz
 
 sudo mv /home/stampcoin/.stamp/blocks /home/stampcoin/.stamp/blocks_bak
 sudo mv /home/stampcoin/.stamp/chainstate /home/stampcoin/.stamp/chainstate_bak
