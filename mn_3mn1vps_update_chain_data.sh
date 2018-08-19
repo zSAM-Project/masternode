@@ -32,8 +32,8 @@ sudo rm ~/stamp.tar.gz
 sudo rm -rf /root/stamp
 
 
-sudo wget https://github.com/zSAM-Project/stamp/releases/download/masternode/33088.tar.gz
-sudo tar -xzvf 33088.tar.gz
+sudo wget https://github.com/zSAM-Project/stamp/releases/download/masternode/chain.tar.gz
+sudo tar -xzvf chain.tar.gz
 
 sudo mv /home/stampmn1/.stamp/blocks /home/stampmn1/.stamp/blocks_bak
 sudo mv /home/stampmn1/.stamp/chainstate /home/stampmn1/.stamp/chainstate_bak
