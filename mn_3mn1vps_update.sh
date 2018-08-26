@@ -18,8 +18,8 @@ echo "**************************************************************************
 echo && echo
 
 cd ~
-sudo wget https://github.com/zSAM-Project/stamp/releases/download/masternode/stamp.tar.gz
-sudo tar -xzvf stamp.tar.gz
+sudo wget https://github.com/zSAM-Project/stamp/releases/download/v2.4.1.1/stamp-2.4.1.tar.gz
+sudo tar -xzvf stamp-2.4.1.tar.gz
 sudo systemctl stop stampmn1
 sudo systemctl stop stampmn2
 sudo systemctl stop stampmn3
@@ -28,7 +28,7 @@ sleep 10
 sudo cp ~/stamp/stamp* /home/stampmn1/
 sudo cp ~/stamp/stamp* /home/stampmn2/
 sudo cp ~/stamp/stamp* /home/stampmn3/
-sudo rm ~/stamp.tar.gz 
+sudo rm ~/stamp-2.4.1.tar.gz
 sudo rm -rf /root/stamp
 
 sudo systemctl start stampmn1
