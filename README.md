@@ -8,6 +8,11 @@ Prepair VPS:
 wget https://raw.githubusercontent.com/zSAM-Project/masternode/master/vps_setup.sh && sudo chmod 755 vps_setup.sh && ./vps_setup.sh
 </pre></code>
 
+User Selection:
+<pre><code>
+wget https://raw.githubusercontent.com/zSAM-Project/masternode/master/stamp_mn_manual.sh && sudo chmod 755 stamp_mn_manual.sh && ./stamp_mn_manual.sh
+</pre></code>
+
 1 MN:
 <pre><code>
 wget https://raw.githubusercontent.com/zSAM-Project/masternode/master/stamp_mn_install.sh && sudo chmod 755 stamp_mn_install.sh && ./stamp_mn_install.sh
@@ -26,6 +31,11 @@ wget https://raw.githubusercontent.com/zSAM-Project/masternode/master/mn_stampco
 3 MN in 1 VPS to Update Latest Version:
 <pre><code>
 wget https://raw.githubusercontent.com/zSAM-Project/masternode/master/mn_3mn1vps_update_chain_data.sh && sudo chmod 755 mn_3mn1vps_update_chain_data.sh && ./mn_3mn1vps_update_chain_data.sh
+</pre></code>
+
+User Selection to Update Latest Version:
+<pre><code>
+wget https://raw.githubusercontent.com/zSAM-Project/masternode/master/stamp_mn_manual_update.sh && sudo chmod 755 stamp_mn_manual_update.sh && ./stamp_mn_manual_update.sh
 </pre></code>
 
 License
